@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="22.css" />
+    <link rel="icon" type="image/x-icon" href="data:image/png;base64,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"
+    >
+    <link
+
+      
+        >
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+          $(document).ready(function(){
+            $('.dropdown-toggle').click(function(){
+              $(this).next('.dropdown-menu').toggleClass('show');
+            });
+          });
+          </script>
+  
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+
+body { font-family: Arial, sans-serif; }
+  .header { text-align: center; padding: 20px; }
+  .main-content { display: flex; justify-content: space-around; padding-left: 100px; padding-bottom: 100px;}
+  .signup-section { width: 40%; }
+  .tutorial-section { width: 250%; padding-left:400px;}
+  .social-login { display: flex; gap: 50px; padding-right: 100px;padding-top: 80px;}
+  .footer { text-align: center; padding: 20px; }
+  .input-group{
+    padding-top: 20px;
+    padding-left: 550px;
+  }
+  .tea{
+    padding-top: 00px;
+  }
+  .dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-menu a {
+  color: #333;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-menu a:hover {
+  background-color: #f1f1f1;
+}
+
+.show {
+  display: block;
+}
+.language-container{
+  padding-left: 550px;
+  padding-top: 20px;
+}
+.language-box{
+  /* text-align: center; */
+  padding-left: 100px;
+  font-size: medium;
+  padding-bottom: 30px;
+} 
+</style>
+
+    <title>CodeBox</title>
+  </head>
+  <body>
+    <div class="sam">
+      <header>
+        
+        <nav class="navbar">
+          <a href="#" class="dropdown-toggle" data-toggle="dropleft">Tutorials</a>
+          <div class="dropdown-menu dropleft">
+            <a class="dropdown-item" href="#" onclick="popup('python')">Python Tutorials</a>
+            <a class="dropdown-item" href="#" onclick="popup('c')">C Tutorials</a>
+            <a class="dropdown-item" href="#" onclick="popup('cpp')">C++ Tutorials</a>
+            <a class="dropdown-item" href="#" onclick="popup('r')">R Tutorials</a>
+            <a class="dropdown-item" href="#" onclick="popup('datascience')">Data Science Tutorials</a>
+          </div>
+          <a href="#" class="dropdown-toggle" data-toggle="dropleft">Courses</a>
+          <div class="dropdown-menu dropleft">
+            <a class="dropdown-item" href="#" onclick="popup('python')">Master in Python</a>
+            <a class="dropdown-item" href="#" onclick="popup('c')">Advance C++</a>
+            <a class="dropdown-item" href="#" onclick="popup('cpp')">Learn with CodeBox</a>
+            <a class="dropdown-item" href="#" onclick="popup('r')">C courses</a>
+            <a class="dropdown-item" href="#" onclick="popup('datascience')">Data Science Tutorials</a>
+          </div>
+          <a href="#" class="dropdown-toggle" data-toggle="dropleft">Examples</a>
+          <div class="dropdown-menu dropleft">
+            <a class="dropdown-item" href="#" onclick="popup('python')">Master in Python</a>
+            <a class="dropdown-item" href="#" onclick="popup('c')">Advance C++</a>
+            <a class="dropdown-item" href="#" onclick="popup('cpp')">Learn with CodeBox</a>
+            <a class="dropdown-item" href="#" onclick="popup('r')">C courses</a>
+            <a class="dropdown-item" href="#" onclick="popup('datascience')">Data Science Tutorials</a>
+          </div>
+          <a href="#" class="dropdown-toggle" data-toggle="dropleft">Coding Sites</a>
+          <div class="dropdown-menu dropleft">
+            <a class="dropdown-item" href="#" onclick="popup('python')">Master in Python</a>
+            <a class="dropdown-item" href="#" onclick="popup('c')">Advance C++</a>
+            <a class="dropdown-item" href="#" onclick="popup('cpp')">Learn with CodeBox</a>
+            <a class="dropdown-item" href="#" onclick="popup('r')">C courses</a>
+            <a class="dropdown-item" href="#" onclick="popup('datascience')">Data Science Tutorials</a>
+          </div>
+          
+
+          <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+        </nav>
+        
+3
+</div>
+        </header>
+
+
+        <div class="hero-section-container">
+          <img src=""  class=""
+
+         > 
+         
+<div class="tea">
+<!-- <p style="color: grey; size: 100%; font-size: 30px; padding-right: 00px; display: flex;">codeBox is the way to enhance your basics</p> -->
+                <!--<input class="input-container-search" type="text" placeholder="Search...">-->
+                <form class="d-flex">
+                  <div class="input-group">
+                      <input class="form-control" style="padding-left: 50px;padding-top: 00px; padding-right: 60px;" type="search" placeholder="Search" aria-label="Search">
+                      <button class="btn btn-primary" type="submit">
+                        <span class="icon">
+                          <ion-icon  style="color: 2980b9;" name ="search-outline"></ion-icon>
+                          <ion-icon name="close-outline"></ion-icon>
+                        </span>
+                          <i class="bi bi-search"></i> <!-- Bootstrap 5 icon -->
+                      </button>
+                      
+                  </div>
+              
+              </form>
+            </div>
+                
+        <div class="social-login" >
+        
+          <a href="https://www.bing.com/search?pglt=41&q=google&cvid=46c513e894f14608886e7eb90ba44774&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQLhhAMgYIAhAAGEAyBggDEC4YQDIGCAQQLhhAMgYIBRAAGEAyBggGEEUYPDIGCAcQRRg8MgYICBBFGDzSAQg4MDIxajBqMagCALACAA&FORM=ANNTA1&PC=HCTS" class="btn btn-primary" type="button" onclick="openPopup('Google')">Google</a>
+          <a href="https://www.linkedin.com/in/tejeswar-reddy-/" class="btn btn-primary" type="button" onclick="openPopup('LinkedIn')">LinkedIn</a>
+          <a href="https://github.com/Tejaswareddy" class="btn btn-primary" type="button" onclick="openPopup('GitHub')">GitHub</a>
+  
+        </div>
+        </div>
+
+        <h1 style="padding-left: 350px;padding-right: 150px;padding-bottom:10px;"><b>Websites For Coding Languages For Beginners</b></h1>
+        <pre style="text-align: center;font-size: larger;"><b>By CodeBox</b></pre>
+        <pre style="text-align: center;font-size: medium; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">     In this massive guide you will find 100+ online resources for learning to code for free! We’ve
+broken them down by type as well as technology (JavaScript, Python, and Machine Learning
+            to name a few), plus we’ve included some handy tips on how to approach learning to code
+             and adopting a developer’s mindset.</b></pre>
+
+        <div class="teja">
+          <div class="main-content">
+            <div class="signup-section">
+              <!-- <p style="font-size: larger"><b>Learn to code from scratch with job focused courses designed by experts.</b></p> -->
+              <!-- <div class="mailbox">
+                <input id="emailInput" type="email" placeholder="Enter email.." size="30px" style="padding-top: 5px; padding-bottom: 5px;">
+              </div> -->
+              <!-- <button ondblclick="window" onclick="showPopup()" a href="signup.html">SignUp</a></button> -->
+              
+              
+            </div>
+            <div class="tutorial-section">
+              <img style="width: 1350%;" src="freeCoding.jpg" alt="">
+            </div>
+            
+          </div>
+
+          </div>        <pre style="text-align: center;font-size: medium;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Do you want to learn to code but are not ready to commit to paid coding classes? If you think computer
+           science and learning to code might be your jam, but aren’t ready to spend money on learning the skills, 
+           this is the roundup for you!
+
+          When you’re ready to master professional level coding skills, you’ll need to dive into a more in-depth coding
+           education. But for now, you can explore the basics, like HTML, CSS, JavaScript, and MUCH MORE for free.
+          
+          Learn to code FOR FREE? 🤑
+          
+          Yep. Better yet: you can learn to code for free online, meaning, from the comfort of your own couch, at your own pace.
+          
+          After 2020’s worldwide pandemic, learning to code online advanced significantly. Many traditional, in-person bootcamps 
+          weren’t an option, but so many people took the plunge anyway — learning new coding skills and programming languages 
+          so that they could make a career change in the midst of a global crisis. And you can too.
+          
+          Below you’ll find 100+ online coding classes and resources for every learning style, commitment level,
+           skill level, and career goal. Take your pick, and you’ll learn to code in no time.</b></pre>
+
+           <div class="language-container">
+            <h1>Table OF Contents</h1>
+            <div class="language-box" >
+                <a href="Data.html" style="color: black; text-align: center;">DataScience</a>
+                </div>
+            <div class="language-box">
+                <a href="Artificial" style="color: black;">Java</a>
+            </div>
+            <div class="language-box">
+                <a href="python.html" style="color: black;">Python</a>
+            </div>
+            <div class="language-box">
+                <a href="java.html" style="color: black;">cpp</a>
+            </div>
+            <div class="language-box">
+                <a href="Javascript.html" style="color: black;">JavaScript</a>
+            </div>
+            <div class="language-box">
+                <a href="cpp.html" style="color: black;">CPP</a>
+            </div>
+            <div class="language-box">
+                <a href="dsss.html" style="color: black;">Data Structures</a>
+            </div>
+            <div class="language-box">
+                <a href="bt.html" style="color: black;">Bootstrap</a>
+            </div>
+            <div class="language-box">
+              <a href="bt.html" style="color: black;">Bootstrap</a>
+          </div>
+          <div class="language-box">
+            <a href="bt.html" style="color: black;">Bootstrap</a>
+        </div>
+        <div class="language-box">
+          <a href="bt.html" style="color: black;">Bootstrap</a>
+      </div>
+        </div>
+        
+        
+        <script>
+          function showPopup() {
+            var email = document.getElementById("emailInput").value;
+            alert("Thank you for signing up with email: " + email);
+          }
+        
+          function openPopup(siteName) {
+            alert("Opening " + siteName);
+            // Here you can add your code to open a popup or perform any other action
+          }
+        </script>
+        
+    </section>
+    <div class="topsearchedlangs">
+      <p id="topsearch" style="color: grey; font-weight: 800; font-size: 50px; padding-left: 200Spx;">Top Searched Languages In Recent Times</p>
+      <a href="topsearch.html" class="btn btn-outline-success" class="btn btn-success btn-lg" style="color:coral">click for top searched languages</a>
+    </div>
+</div>
+    <section class="container we-offer">
+      <div class="we-offer-card">
+        <img src="back1.jpg" alt="python11.jpg">
+       
+        <div class="we-offer-content">
+
+          <a href="python.html" class="btn btn-outline-success">
+            Python Programming</a>
+          <p style="color: grey">Get your basics on Python</p>
+        </div>
+      </div>
+
+      <div class="we-offer-card">
+        <img src="html.jpg" alt="">
+        <div class="we-offer-content">
+          <a href="html.html" class="btn btn-outline-success">Hyper Text MarkUp language</a>
+          <p style="color: grey">Learn to make your site</p>
+        </div>
+      </div>
+
+      <div class="we-offer-card">
+        <img src="css.jpg" alt="css.jpg">
+        <div class="we-offer-content">
+          <a href="css.html" class="btn btn-outline-success">Styling Sheets</a>
+          <p>Learn t design the sites</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="container collections">
+
+        <h1>Collections</h1>
+        <div class="sub-heading-container">
+          <p style=" color: grey; font-size: large; font-weight: 1000;">These are the Recent Hot topics of Coding Languages</p>
+                  </div>
+
+        <div class="collections-cards-container">
+
+          <div class="card card2">
+            <img src="recenthyped22.png" alt="">
+
+            <div class="overlay"></div>
+            <div class="content">
+              <a href="recenthyprd.html" class="btn btn-secondary" style="color: lemonchiffon;">Recently Hyped languages</a>
+              
+             <pre> <span style="font-size: medium;">These are heavy learned language</span></pre>
+            </div>
+          </div>
+          
+          <div class="card card2">
+            <img src="1hourvideo.jpg" alt="">
+
+            <div class="overlay"></div>
+            <div class="content">
+              <a href="1hrvid.html" class="btn btn-secondary" style="color: lemonchiffon;">Top videos under an hour</a>
+              
+              <span  style="font-size: medium;">For Quick and Easy</span>
+            </div>
+          </div>
+
+          <div class="card card3">
+            <img src="datascience.jpg" alt="">
+
+            <div class="overlay"></div>
+            <div class="content">
+              <a href="datascience.html" class="btn btn-secondary" style="color: lemonchiffon;">Languages for DataScience</a>
+              
+              <pre><span style="color: white; font-size: medium;">
+Click above to become DataScientist</span></pre>
+            </div>
+          </div>
+
+          <div class="card card1">
+            <img src="trending.jpg" alt="trending.jpg">
+            <div class="overlay"></div>
+            <div class="content">
+              <a href="trending.html" class="btn btn-secondary" style="color: lemonchiffon">Trending In Coding</a>
+              <pre><span style="font-size: medium; padding: bottom;">
+keep yourselves updated </span></pre>
+            </div>
+          </div>
+
+
+        </div>
+
+
+    </section>
+
+    <section class="container get-the-app">
+      <div class="semiContainer">
+        <div class="left">
+          <img src="images/mobileBanner.png" alt="">
+        </div>
+        <div class="right">
+          <h1>Coding Supermacy</h1>
+          <p>
+            We will send you a link, Open it on your phone to view our app in your Mobile
+          </p>
+          <div class="radio-button-container">
+            <div>
+              <input type="radio" id="email" name="download-app">
+              <label for="email" style="font-size:14px">Email</label>
+            </div>
+            <div>
+              <input type="radio" id="phone" name="download-app">
+              <label for="phone" style="font-size:14px">Phone</label>
+            </div>
+          </div>
+          
+<div class="container mt-5">
+  <div class="input-container">
+    <input type="email" placeholder="Email">
+    <a href="share athe link" class="btn btn-outline-success" style="color: grey;">Sharing our link</a>
+    <!-- <button onclick="shareAppLink()">Share App Link</button> -->
+  </div>
+</div>
+          <div class="download-app-container">
+            
+            <div class="download-app-icons">
+              <img src="images/playStore.png" alt="">
+              <img src="images/appleStore.png" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="container footer">
+      <div class="footer-section1">
+        <img src="images/logo.png" alt="">
+        <div class="section1-buttoncontainer">
+          <button>
+            <img src="https://flagcdn.com/w40/in.png" alt="indian flag"
+            style="width:17px"
+            >India
+          </button>
+          <button><i class="fa fa-globe"></i>English</button>
+        </div>
+      </div>
+      <div class="navigation-container">
+        <div class="link-container">
+          <h5>ABOUT </h5>
+          <a href="#" class="footer-link">Who we are</a>
+          <a href="#" class="footer-link">Blogs</a>
+          <a href="#" class="footer-link">Work with us</a>
+          <a href="#" class="footer-link">Investor Relation</a>
+          <a href="#" class="footer-link">Report Fraud</a>
+        </div>
+
+        <div class="link-container">
+          <h5>CodeBox</h5>
+
+          <a href="#" class="footer-link">Coding</a>
+          <a href="#" class="footer-link">Learning India</a>
+          <a href="#" class="footer-link">Hyperpure</a>
+          <a href="#" class="footer-link">LanguageLand</a>
+
+        </div>
+
+        <div class="link-container">
+          <h5>FOR CODING PRACTISES</h5>
+          <a href="#" class="footer-link">Partner With Us</a>
+          <a href="#" class="footer-link">Apps for You</a>
+          <br/>
+          <h5>FOR ENTERPRISES</h5>
+          <a href="#" class="footer-link">Zomato For Work</a>
+
+        </div>
+
+        <div class="link-container">
+          <h5>Learn More</h5>
+
+          <a href="#" class="footer-link">Privacy</a>
+          <a href="#" class="footer-link">Security</a>
+          <a href="#" class="footer-link">Terms</a>
+          <a href="#" class="footer-link">SiteMap</a>
+
+
+        </div>
+
+        <div class="link-container">
+          <h5>SOCIAL LINKS</h5>
+          <div class="social-links-container">
+            <button onclick="alert('LinkedIn')"><i class="fab fa-linkedin-in"></i></button>
+            <button onclick="alert('Instagram')"><i class="fab fa-instagram"></i></button>
+            <button onclick="alert('Twitter')"><i class="fa-brands fa-twitter"></i></button>
+            <button onclick="alert('Google')"><i class="fa-brands fa-google"></i></button>
+            <button onclick="alert('GitHub')"><i class="fa-brands fa-github"></i></button>
+          </div>
+          <br>
+          <img src="images/appleStore.png" alt="footer appstore logo" class="footer-section-logos">
+          <img src="images/playStore.png" alt="footer playstore logo" class="footer-section-logos">
+        </div>
+
+
+
+      </div>
+
+      
+
+    </footer>
+
+
+ </body>
+</html>
